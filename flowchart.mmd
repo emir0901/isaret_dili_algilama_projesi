@@ -1,0 +1,10 @@
+graph TD
+    A[Akıllı Eldiven (Flex & IMU Sensörleri)] -->|UART Haberleşmesi| B(Veri Ön İşleme & Ölçeklendirme)
+    B --> C{Kalibrasyon Modu mu?}
+    C -->|Evet| D[Yeni Veri Toplama]
+    C -->|Hayır| E[Gerçek Zamanlı İnfens (Tahmin)]
+    D --> F[Makine Öğrenmesi (MLP) Eğitimi]
+    F --> E
+    E --> G[Harf Sınıflandırma Çıktısı]
+    G --> H[Kelime Birleştirme & Auto-Correct]
+    H --> I[UI Ekranı ve Text-to-Speech (Ses)]

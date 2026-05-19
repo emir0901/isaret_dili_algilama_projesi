@@ -1,0 +1,28 @@
+graph LR
+    subgraph Input Layer
+    I1((f1))
+    I2((f2))
+    I3((f3))
+    I4((f4))
+    I5((f5))
+    I6((ax))
+    I7((ay))
+    end
+    
+    subgraph Hidden Layers
+    H1[Dense Layer 1<br/>128 Nöron<br/>ReLU]
+    H2[Dense Layer 2<br/>64 Nöron<br/>ReLU]
+    H3[Dense Layer 3<br/>32 Nöron<br/>ReLU]
+    end
+    
+    subgraph Output Layer (20 Sınıf)
+    O1((A))
+    O2((B))
+    O3((...))
+    O4((Z))
+    end
+    
+    Input Layer --> H1
+    H1 --> H2
+    H2 --> H3
+    H3 --> Output Layer
