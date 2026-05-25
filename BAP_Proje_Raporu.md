@@ -1,6 +1,11 @@
 # BAP (Bilimsel Araştırma Projeleri) Sonuç Raporu
 **Proje Başlığı:** Mikrodenetleyici ve Sensör Füzyonu Tabanlı Akıllı Eldiven ile Gerçek Zamanlı İşaret Dili Analiz Sistemi
 
+> ### ✍️ Geliştirici ve Proje Sahibi Bilgileri
+> - **Proje Geliştiricisi / Yazar:** Recep Emirhan Öztürk
+> - **E-posta:** [emrhanozt06@gmail.com](mailto:emrhanozt06@gmail.com)
+> - **GitHub:** [@emir0901](https://github.com/emir0901)
+
 ## Özet
 İşitme ve konuşma engelli bireylerin günlük hayattaki iletişim engellerini kaldırmayı hedefleyen bu projede, giyilebilir teknoloji tabanlı bir akıllı eldiven geliştirilmiştir. Eldiven üzerindeki bükülme (flex) ve ivmeölçer (IMU) sensörlerinden alınan veriler, yapay zeka algoritmaları ile gerçek zamanlı olarak işaret dili harflerine dönüştürülmüştür. Sistemin çevresel değişkenlere ve hatalı sensör okumalarına karşı dayanıklılığını test etmek için "Sentetik Gürültü (Data Augmentation)" yöntemleri uygulanmıştır. Kişiselleştirilmiş kalibrasyon ile bu zorlu şartlar altında bile makine öğrenmesi mimarisi %92 ile %94 arasında yüksek ve istikrarlı bir doğruluk payına ulaşmıştır.
 

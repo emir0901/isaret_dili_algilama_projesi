@@ -1,3 +1,13 @@
+# ==============================================================================
+#                 İŞARET DİLİ ANALİZ SİSTEMİ PROJESİ (BAP)
+# ==============================================================================
+# Geliştirici / Yazar : Recep Emirhan Öztürk
+# E-posta            : emrhanozt06@gmail.com
+# GitHub             : https://github.com/emir0901
+#
+# © 2026 Recep Emirhan Öztürk. Tüm hakları saklıdır.
+# ==============================================================================
+
 import customtkinter as ctk
 import threading
 import serial
@@ -115,6 +125,7 @@ class SignLanguageApp(ctk.CTk):
     def setup_ui(self):
         self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(0, weight=1)
+        self.grid_rowconfigure(1, weight=0)
 
         # SOL PANEL (Ayarlar)
         sb = ctk.CTkFrame(self, width=280, corner_radius=0, fg_color="#111")
@@ -178,6 +189,17 @@ class SignLanguageApp(ctk.CTk):
         self.history_box.pack(padx=25, pady=10, fill="both")
         self.history_box.insert("1.0", "Hazır...")
         self.history_box.configure(state="disabled")
+
+        # --- PREMİUM FOOTER İMZA BANDI ---
+        footer = ctk.CTkFrame(self, fg_color="#0a0a0a", height=32, corner_radius=0, border_width=1, border_color="#1f1f1f")
+        footer.grid(row=1, column=0, columnspan=2, sticky="ew")
+        
+        ctk.CTkLabel(footer, text="© 2026 İŞARET DİLİ ANALİZ SİSTEMİ | Tüm Hakları Saklıdır", 
+                     font=ctk.CTkFont(size=11, weight="normal"), text_color="gray").pack(side="left", padx=20)
+        
+        signature_text = "Geliştirici: Recep Emirhan Öztürk  •  E-posta: emrhanozt06@gmail.com  •  GitHub: github.com/emir0901"
+        ctk.CTkLabel(footer, text=signature_text, 
+                     font=ctk.CTkFont(size=11, weight="bold"), text_color="#3b8ed0").pack(side="right", padx=20)
 
     def serial_loop(self):
         PORT = '/dev/cu.usbserial-0001'
@@ -455,9 +477,19 @@ class SignLanguageApp(ctk.CTk):
     def open_calib(self):
         self.calib_win = ctk.CTkToplevel(self)
         self.calib_win.title("KALİBRASYON MERKEZİ")
-        self.calib_win.geometry("900x700")
+        self.calib_win.geometry("900x750")
         self.calib_win.attributes("-topmost", True)
         self.calib_win.configure(fg_color="#111")
+
+        # --- KALİBRASYON FOOTER İMZA BANDI ---
+        calib_footer = ctk.CTkFrame(self.calib_win, fg_color="#0a0a0a", height=32, corner_radius=0, border_width=1, border_color="#1f1f1f")
+        calib_footer.pack(side="bottom", fill="x")
+        
+        ctk.CTkLabel(calib_footer, text="Kalibrasyon Merkezi  |  Geliştirici: Recep Emirhan Öztürk", 
+                     font=ctk.CTkFont(size=11, weight="bold"), text_color="#2fa572").pack(side="left", padx=20)
+                     
+        ctk.CTkLabel(calib_footer, text="E-posta: emrhanozt06@gmail.com  •  GitHub: github.com/emir0901", 
+                     font=ctk.CTkFont(size=11), text_color="gray").pack(side="right", padx=20)
 
         # Sol taraf: Bilgi ve Sinyal (Card Style) - BÜYÜTÜLDÜ
         left_p = ctk.CTkFrame(self.calib_win, fg_color="#1a1a1a", width=350, corner_radius=15)

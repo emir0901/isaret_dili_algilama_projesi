@@ -1,5 +1,10 @@
 # Akıllı Eldiven Tabanlı İşaret Dili Tanıma Sistemi (BAP Projesi)
 
+> ### ✍️ Geliştirici ve Proje Sahibi Bilgileri
+> - **Yazar / Geliştirici:** Recep Emirhan Öztürk
+> - **E-posta:** [emrhanozt06@gmail.com](mailto:emrhanozt06@gmail.com)
+> - **GitHub:** [@emir0901](https://github.com/emir0901)
+
 Bu proje, esneklik (Flex) ve ivmeölçer (IMU) sensörleri ile donatılmış giyilebilir akıllı bir eldiven aracılığıyla el hareketlerini ve işaret dili harflerini anlık olarak tespit edip dijital metne çeviren, çoklu yapay zeka modelleriyle çalışan akademik ve uygulamalı bir sistemdir.
 
 ---

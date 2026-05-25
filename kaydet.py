@@ -1,3 +1,13 @@
+# ==============================================================================
+#                 İŞARET DİLİ ANALİZ SİSTEMİ PROJESİ (BAP)
+# ==============================================================================
+# Geliştirici / Yazar : Recep Emirhan Öztürk
+# E-posta            : emrhanozt06@gmail.com
+# GitHub             : https://github.com/emir0901
+#
+# © 2026 Recep Emirhan Öztürk. Tüm hakları saklıdır.
+# ==============================================================================
+
 """
 Otomatik Veri Kaydedici
 =======================
