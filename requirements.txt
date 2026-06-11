@@ -6,3 +6,5 @@ seaborn
 xgboost
 lightgbm
 customtkinter
+pyserial
+pyttsx3
