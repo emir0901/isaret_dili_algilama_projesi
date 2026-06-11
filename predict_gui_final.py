@@ -101,23 +101,18 @@ class SignLanguageApp(ctk.CTk):
         except Exception as e:
             print(f"Sözlük yüklenemedi: {e}")
 
-    def load_model(self, name):
+    def load_model(self, name="MLP (Ana)"):
         try:
             self.current_model_name = name
-            path_suffix = {
-                "Random Forest": "_test4rf", "XGBoost": "_test8xgb",
-                "LightGBM": "_test9lgbm", "Extra Trees": "_test10et",
-                "SVM": "_test3svm", "MLP (Ana)": ""
-            }.get(name, "")
             
-            with open(f'sign_language_model{path_suffix}.pkl', 'rb') as f:
+            with open('sign_language_model.pkl', 'rb') as f:
                 self.model = pickle.load(f)
-            with open(f'scaler{path_suffix}.pkl', 'rb') as f:
+            with open('scaler.pkl', 'rb') as f:
                 self.scaler = pickle.load(f)
-            with open(f'label_encoder{path_suffix}.pkl', 'rb') as f:
+            with open('label_encoder.pkl', 'rb') as f:
                 self.label_encoder = pickle.load(f)
             
-            self.status_lbl.configure(text=f"● {name} Aktif", text_color="#2fa572")
+            self.status_lbl.configure(text="● MLP Modeli Aktif", text_color="#2fa572")
         except Exception as e:
             print(f"Model yükleme hatası: {e}")
             self.status_lbl.configure(text="● Model Yüklenemedi", text_color="#c93434")
@@ -137,7 +132,7 @@ class SignLanguageApp(ctk.CTk):
         self.signal_dot.pack(pady=(0, 20))
 
         ctk.CTkLabel(sb, text="YAPAY ZEKA MODELİ", font=ctk.CTkFont(size=11, weight="bold"), text_color="gray").pack(padx=20, anchor="w")
-        self.model_box = ctk.CTkComboBox(sb, values=["MLP (Ana)", "Extra Trees", "Random Forest", "SVM", "XGBoost", "LightGBM"], command=self.load_model)
+        self.model_box = ctk.CTkComboBox(sb, values=["MLP (Ana)"], command=self.load_model)
         self.model_box.pack(padx=20, pady=5, fill="x")
         self.model_box.set("MLP (Ana)")
 
@@ -151,7 +146,7 @@ class SignLanguageApp(ctk.CTk):
         self.status_lbl = ctk.CTkLabel(sb, text="● Sistem Hazır", text_color="gray", font=ctk.CTkFont(size=11))
         self.status_lbl.pack(side="bottom", pady=(10, 20))
 
-        ctk.CTkButton(sb, text="🛑 TESTİ BİTİR", fg_color="#c93434", hover_color="#a12a2a", height=45,
+        ctk.CTkButton(sb, text="🛑 UYGULAMAYI KAPAT", fg_color="#c93434", hover_color="#a12a2a", height=45,
                       font=ctk.CTkFont(weight="bold"), command=self.destroy).pack(side="bottom", padx=20, pady=10, fill="x")
 
         ctk.CTkButton(sb, text="EKRANI TEMİZLE", fg_color="gray", hover_color="#444", 
